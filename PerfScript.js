@@ -1,6 +1,6 @@
 const maxApi = require('max-api');
 const io = require('socket.io-client');
-const socket = io('http://h.s2.cloud.shaneth.com');
+const socket = io('http://h.s2.cloud.shaneth.com:8081');
 
 
 var x = 0;
@@ -17,6 +17,6 @@ maxApi.addHandler("echo", (msg) => {
 
 socket.on('value', function(msg){
            
-         //  WHATEVER MAX NEEDS
+         //  WHATEVER MAX NEEDS FROM THE SERVER
            
         });
