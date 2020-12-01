@@ -1,11 +1,13 @@
-//Shane Patterson
+//Shane Patterson, mostly
 //2020
 
-const httpServer = require("http").createServer();
-const io = require("socket.io")(httpServer);
-var port = 3000;
+var app = require('express')();
+var http = require('http').createServer(app);
 
-httpServer.listen(port, function(){
+const io = require("socket.io")(http);
+var port = 8081;
+
+http.listen(port, function(){
   console.log('listening on *:' + port);
 });
 
@@ -19,7 +21,12 @@ io.on('connection', function(socket){
       console.log(msg);
   });
 });
-
+io.on('connection', socket => {
+  console.log('Some client connected')
+})
+app.get('/', (req, res) => {
+  res.send('<h1>Test!</h1>');
+});
 
 /* client side
 
