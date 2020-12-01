@@ -26,5 +26,5 @@ io.on('connection', socket => {
   console.log('Some client connected')
 })
 app.get('/', (req, res) => {
-  res.send('<h1>Test!</h1>');
+  res.sendFile(__dirname + '/index.html');
 });
