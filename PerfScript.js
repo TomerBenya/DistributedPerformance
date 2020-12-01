@@ -14,3 +14,9 @@ maxApi.addHandler("echo", (msg) => {
 	socket.emit('value', msg);
 	maxApi.post(msg);
 });
+
+socket.on('value', function(msg){
+           
+         //  WHATEVER MAX NEEDS
+           
+        });
