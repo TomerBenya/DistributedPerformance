@@ -12,12 +12,13 @@ http.listen(port, function(){
 });
 
 io.on("connection", (socket) => {
-   io.emit("hello", "world");
+  // io.emit("hello", "world"); for testing
 });
 
 io.on('connection', function(socket){
   socket.on('value', function(msg){
-      io.emit('value', msg);
+     socket.broadcast.emit('value', msg);
+
       console.log(msg);
   });
 });
@@ -27,13 +28,3 @@ io.on('connection', socket => {
 app.get('/', (req, res) => {
   res.send('<h1>Test!</h1>');
 });
-
-/* client side
-
-socket.on('value', function(msg){
-           
-         //  WHATEVER MAX NEEDS
-           
-        });
-
-        */

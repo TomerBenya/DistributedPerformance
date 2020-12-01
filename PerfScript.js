@@ -17,6 +17,6 @@ maxApi.addHandler("echo", (msg) => {
 
 socket.on('value', function(msg){
            
-         //  WHATEVER MAX NEEDS FROM THE SERVER
+         //  WHATEVER MAX NEEDS FROM THE SERVER for the listener, will come in as variable 'msg'
            
         });
