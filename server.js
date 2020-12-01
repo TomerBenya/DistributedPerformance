@@ -2,10 +2,10 @@
 //2020
 
 const httpServer = require("http").createServer();
-const io = require("socket.io")(http);
-var port = process.env.PORT || 3000;
+const io = require("socket.io")(httpServer);
+var port = 3000;
 
-http.listen(port, function(){
+httpServer.listen(port, function(){
   console.log('listening on *:' + port);
 });
 
@@ -21,7 +21,7 @@ io.on('connection', function(socket){
 });
 
 
-/*clients will recieve msg variable passed to them add this to your client side script:
+/* client side
 
 socket.on('value', function(msg){
            
